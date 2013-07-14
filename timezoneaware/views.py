@@ -9,4 +9,4 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
 	list=stats.objects.all()
 	tosend=serializers.serialize("json", myapps)
-	return render_to_response('/static/index.html','data' : tosend, context_instance=RequestContext(request))
+	return render_to_response('/static/index.html',{ 'data' : tosend }, context_instance=RequestContext(request))
