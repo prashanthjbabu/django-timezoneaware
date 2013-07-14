@@ -4,7 +4,7 @@ import urllib, urllib2
 from django.utils import simplejson
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
-
+from timezoneaware.models import stats
 #@csrf_exempt
 def index(request):
 	list=stats.objects.all()
