@@ -106,9 +106,9 @@ ROOT_URLCONF = 'timezoneaware.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'timezoneaware.wsgi.application'
-
+import os
 TEMPLATE_DIRS = (
-    "/static",
+    os.path.join(os.path.dirname(__file__), '../static').replace('\\','/'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
