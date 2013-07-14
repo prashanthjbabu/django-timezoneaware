@@ -109,7 +109,7 @@ ROOT_URLCONF = 'timezoneaware.urls'
 WSGI_APPLICATION = 'timezoneaware.wsgi.application'
 import os
 TEMPLATE_DIRS = (
-    "/var/www/timezoneaware/timezoneaware/static"
+    '/var/www/timezoneaware/timezoneaware/static',
     #os.path.join(os.path.dirname(__file__), './static').replace('\\','/'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.

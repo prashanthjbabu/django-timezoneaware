@@ -11,4 +11,4 @@ from django.core import serializers
 def index(request):
 	list=stats.objects.all()
 	tosend=serializers.serialize("json", list)
-	return render_to_response('/static/index.html',{ 'data' : tosend }, context_instance=RequestContext(request))
+	return render_to_response('index.html',{ 'data' : tosend }, context_instance=RequestContext(request))
