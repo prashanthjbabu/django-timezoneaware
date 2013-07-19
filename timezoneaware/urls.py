@@ -6,6 +6,7 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     url(r'^$', 'timezoneaware.views.index', {}, name='home_url_name'),
+    url(r'add/^$', 'timezoneaware.views.add',),
     # Examples:
     # url(r'^$', 'timezoneaware.views.home', name='home'),
     # url(r'^timezoneaware/', include('timezoneaware.foo.urls')),

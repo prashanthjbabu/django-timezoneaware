@@ -11,6 +11,15 @@ import datetime
 #@csrf_exempt
 def index(request):
 	list=stats.objects.all()
-	tosend=serializers.serialize("json", list)
+	#tosend=serializers.serialize("json", list)
+	latesttime=list[0].time
 	now=datetime.datetime.now()
-	return render_to_response('index.html',{ 'data' : tosend ,'currtime' : now }, context_instance=RequestContext(request))
+	return render_to_response('index.html',{ 'latesttime' : latesttime ,'currtime' : now }, context_instance=RequestContext(request))
+
+def add(request):
+	stat=stats()
+	stat.save()
+	list=stats.objects.all()
+	latesttime=list[0].time
+	now=datetime.datetime.now()
+	return render_to_response('add.html',{ 'latesttime' : latesttime ,'currtime' : now }, context_instance=RequestContext(request))
