@@ -8,6 +8,8 @@ from timezoneaware.models import stats
 from django.core import serializers
 import datetime
 from dateutil import tz
+from pytz import UTC
+
 
 #@csrf_exempt
 def index(request):
