@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from timezoneaware.models import stats
 from django.core import serializers
 import datetime
+from dateutil import tz
 
 #@csrf_exempt
 def index(request):
@@ -14,6 +15,8 @@ def index(request):
 	#tosend=serializers.serialize("json", list)
 	latesttime=list[0].time
 	now=datetime.datetime.now()
+	tozone=tz.tzlocal()
+	now=now.astimezone(tozone)
 	return render_to_response('index.html',{ 'latesttime' : latesttime ,'currtime' : now }, context_instance=RequestContext(request))
 
 def add(request):
