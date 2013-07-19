@@ -15,8 +15,8 @@ def index(request):
 	#tosend=serializers.serialize("json", list)
 	latesttime=list[0].time
 	now=datetime.datetime.now()
-	tozone=tz.tzlocal()
-	now=now.replace(tzinfo=tozone)
+	#tozone=tz.tzlocal()
+	now=now.replace(tzinfo=UTC)
 	return render_to_response('index.html',{ 'latesttime' : latesttime ,'currtime' : now }, context_instance=RequestContext(request))
 
 def add(request):
