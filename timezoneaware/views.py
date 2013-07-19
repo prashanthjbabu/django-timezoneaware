@@ -16,7 +16,7 @@ def index(request):
 	latesttime=list[0].time
 	now=datetime.datetime.now()
 	tozone=tz.tzlocal()
-	now=now.astimezone(tozone)
+	now=now.replace(tzinfo=tozone)
 	return render_to_response('index.html',{ 'latesttime' : latesttime ,'currtime' : now }, context_instance=RequestContext(request))
 
 def add(request):
