@@ -12,6 +12,16 @@
                     {{latesttime}}
                     {% endlocaltime %}
     </p>
-
+    <button type="button" name="add" id="add" onclick="addval()">ADD</button>
+    <div id="addresult"></div>
+	<script type="text/javascript">
+	function addval()
+	{
+		$.get('/add/', function(data) {
+		  $('#addresult').html(data);
+		  //alert('Load was performed.');
+		});		
+	}
+	</script>
 </body>
 </html>
